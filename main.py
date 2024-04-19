@@ -81,7 +81,6 @@ plt.annotate('Linear fit', xy=(xs_linear[-5], ys_linear[-5]), xytext=(10, -10),
              bbox=dict(boxstyle="round,pad=0.5", fc="w"),
              arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2", color="red"))
 
-# 注释二次拟合
 plt.annotate('Quadratic fit', xy=(xs_quad[-5], ys_quad[-5]), xytext=(20, -10),
              textcoords="offset points", ha='right', va='bottom',
              bbox=dict(boxstyle="round,pad=0.5", fc="w"),
@@ -101,7 +100,6 @@ model = LinearRegression().fit(X, y)
 coefficients = model.coef_
 intercept = model.intercept_
 
-# 为了绘制拟合平面，生成网格数据
 x = np.linspace(features_scaled_df['mean_land'].min(), features_scaled_df['mean_land'].max(), num=10)
 y = np.linspace(features_scaled_df['mean_watuse'].min(), features_scaled_df['mean_watuse'].max(), num=10)
 x, y = np.meshgrid(x, y)
